@@ -1,0 +1,11 @@
+extends layout
+block content
+    h1 Communication avec socket.io !
+    p
+      input#poke(type='button', value='envoyer les infos')
+    script(src='/socket.io/socket.io.js')
+    script.
+      var socket = io.connect('http://localhost:3001');
+      socket.on('message', function(message) {
+      alert('Le serveur a un message pour vous : ' + message);
+      })
