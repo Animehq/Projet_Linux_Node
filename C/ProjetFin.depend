@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1462876494 source:/home/invite/Bureau/ProjetFin/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/socket.h>
+	<err.h>
+	<unistd.h>
+
+1462979888 source:/home/user/Documents/ProjetFin/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/socket.h>
+	<err.h>
+	<unistd.h>
+	<regex.h>
+	<math.h>
+

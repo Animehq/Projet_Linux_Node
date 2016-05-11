@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1462808303 source:/home/germaine/Bureau/teste2/main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<sys/socket.h>
-	<err.h>
-	<unistd.h>
-
