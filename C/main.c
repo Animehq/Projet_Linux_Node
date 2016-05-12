@@ -305,6 +305,10 @@ int main(int argc, char *argv[])
             perror("ERROR reading from socket");
             exit(1);
         }
+        else
+        {
+            printf("Reading socket OK !");
+        }
         if (strcmp(buffer, "exit") == 0)
         {
             int lock = close(newsockfd);
@@ -324,6 +328,10 @@ int main(int argc, char *argv[])
         {
             perror("ERROR writing to socket");
             exit(1);
+        }
+        else
+        {
+            printf("Writing socket OK !");
         }
 
     }
