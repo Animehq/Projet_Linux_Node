@@ -1,19 +1,17 @@
 extends layout
 block content
     h1  Some datas.
-    svg#fillgauge1(width='10%', height='200', onclick='gauge1.update(NewValue());')
-    svg#fillgauge2(width='10%', height='200', onclick='gauge2.update(NewValue());')
-    svg#fillgauge3(width='10%', height='200', onclick='gauge3.update(NewValue());')
-    svg#fillgauge4(width='10%', height='200', onclick='gauge4.update(NewValue());')
-    svg#fillgauge5(width='10%', height='200', onclick='gauge5.update(NewValue());')
-    svg#fillgauge6(width='10%', height='200', onclick='gauge6.update(NewValue());')
+    svg#fillgauge1(width='10%', height='200')
+    svg#fillgauge2(width='10%', height='200' onLoad='gauge2.update(NewValue());')
+    svg#fillgauge3(width='10%', height='200' onLoad='gauge3.update(NewValue());')
+    svg#fillgauge4(width='10%', height='200' onLoad='gauge4.update(NewValue());')
+    svg#fillgauge5(width='10%', height='200' onLoad='gauge5.update(NewValue());')
     .gaugetxt
         span.gauge1  CPU
-        span.gauge2 RAM
-        span.gauge3  CPU
-        span.gauge4  CPU
-        span.gauge5  CPU
-        span.gauge6  CPU
+        span.gauge2  RAM active
+        span.gauge3  RAM utilisée
+        span.gauge4  Debit montant
+        span.gauge5  Debit descendant
     script(language='JavaScript').
         var gauge1 = loadLiquidFillGauge("fillgauge1", 55);
         var config1 = liquidFillGaugeDefaultSettings();
@@ -96,8 +94,13 @@ block content
         config5.waveOffset = 0.25;
         config5.textSize = 0.75;
         config5.waveCount = 3;
-        var gauge6 = loadLiquidFillGauge("fillgauge6", 80);
-        function NewValue() {
-            if (Math.random() > .5) return Math.round(Math.random() * 100);
+         function NewValue() {
+           if (Math.random() > .5) return Math.round(Math.random() * 100);
             return (Math.random() * 100).toFixed(1);
         }
+        setInterval(function(){gauge1.update(NewValue())}, 5000);
+        setInterval(function(){gauge2.update(NewValue())}, 5000);
+        setInterval(function(){gauge3.update(NewValue())}, 5000);
+        setInterval(function(){gauge4.update(NewValue())}, 5000);
+        setInterval(function(){gauge5.update(NewValue())}, 5000);
+

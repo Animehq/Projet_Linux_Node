@@ -3,10 +3,12 @@ body {
 	font-weight:bold;
 }
 
-.gauge1, .gauge2, .gauge3, .gauge4, .gauge5, .gauge6 {
+.gauge1, .gauge2, .gauge3, .gauge4 {
 	text-align: left; 
-	margin: 4.12em;
+	margin: 2.85em;
 }
+
+
 
 /*.liquidFillGaugeText { 
 	font-family: Helvetica; 
