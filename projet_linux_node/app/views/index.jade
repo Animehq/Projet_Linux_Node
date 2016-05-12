@@ -1,11 +1,103 @@
 extends layout
 block content
-    h1 Communication avec socket.io !
-    p
-      input#poke(type='button', value='envoyer les infos')
-    script(src='/socket.io/socket.io.js')
-    script.
-      var socket = io.connect('http://localhost:3001');
-      socket.on('message', function(message) {
-      alert('Le serveur a un message pour vous : ' + message);
-      })
+    h1  Some datas.
+    svg#fillgauge1(width='10%', height='200', onclick='gauge1.update(NewValue());')
+    svg#fillgauge2(width='10%', height='200', onclick='gauge2.update(NewValue());')
+    svg#fillgauge3(width='10%', height='200', onclick='gauge3.update(NewValue());')
+    svg#fillgauge4(width='10%', height='200', onclick='gauge4.update(NewValue());')
+    svg#fillgauge5(width='10%', height='200', onclick='gauge5.update(NewValue());')
+    svg#fillgauge6(width='10%', height='200', onclick='gauge6.update(NewValue());')
+    .gaugetxt
+        span.gauge1  CPU
+        span.gauge2 RAM
+        span.gauge3  CPU
+        span.gauge4  CPU
+        span.gauge5  CPU
+        span.gauge6  CPU
+    script(language='JavaScript').
+        var gauge1 = loadLiquidFillGauge("fillgauge1", 55);
+        var config1 = liquidFillGaugeDefaultSettings();
+        config1.circleThickness = 0.15;
+        config1.circleColor = "#808015";
+        config1.textColor = "#555500";
+        config1.waveTextColor = "#FFFFAA";
+        config1.waveColor = "#AAAA39";
+        config1.textVertPosition = 0.8;
+        config1.waveAnimateTime = 1000;
+        config1.waveHeight = 0.05;
+        config1.waveAnimate = true;
+        config1.waveRise = false;
+        config1.waveHeightScaling = false;
+        config1.waveOffset = 0.25;
+        config1.textSize = 0.75;
+        config1.waveCount = 3;
+        //.attr('transform','translate('+radius+','+textRiseScaleY(config.textVertPosition)+')');
+        var gauge2 = loadLiquidFillGauge("fillgauge2", 55);
+        var config2 = liquidFillGaugeDefaultSettings();
+        config2.circleThickness = 0.15;
+        config2.circleColor = "#808015";
+        config2.textColor = "#555500";
+        config2.waveTextColor = "#FFFFAA";
+        config2.waveColor = "#AAAA39";
+        config2.textVertPosition = 0.8;
+        config2.waveAnimateTime = 1000;
+        config2.waveHeight = 0.05;
+        config2.waveAnimate = true;
+        config2.waveRise = false;
+        config2.waveHeightScaling = false;
+        config2.waveOffset = 0.25;
+        config2.textSize = 0.75;
+        config2.waveCount = 3;
+        var gauge3 = loadLiquidFillGauge("fillgauge3", 60.1);
+        var config3 = liquidFillGaugeDefaultSettings();
+        config3.circleThickness = 0.15;
+        config3.circleColor = "#808015";
+        config3.textColor = "#555500";
+        config3.waveTextColor = "#FFFFAA";
+        config3.waveColor = "#AAAA39";
+        config3.textVertPosition = 0.8;
+        config3.waveAnimateTime = 1000;
+        config3.waveHeight = 0.05;
+        config3.waveAnimate = true;
+        config3.waveRise = false;
+        config3.waveHeightScaling = false;
+        config3.waveOffset = 0.25;
+        config3.textSize = 0.75;
+        config3.waveCount = 3;
+        var gauge4 = loadLiquidFillGauge("fillgauge4", 50);
+        var config4 = liquidFillGaugeDefaultSettings();
+        config4.circleThickness = 0.15;
+        config4.circleColor = "#808015";
+        config4.textColor = "#555500";
+        config4.waveTextColor = "#FFFFAA";
+        config4.waveColor = "#AAAA39";
+        config4.textVertPosition = 0.8;
+        config4.waveAnimateTime = 1000;
+        config4.waveHeight = 0.05;
+        config4.waveAnimate = true;
+        config4.waveRise = false;
+        config4.waveHeightScaling = false;
+        config4.waveOffset = 0.25;
+        config4.textSize = 0.75;
+        config4.waveCount = 3;
+        var gauge5 = loadLiquidFillGauge("fillgauge5", 60.44);
+        var config5 = liquidFillGaugeDefaultSettings();
+        config5.circleThickness = 0.15;
+        config5.circleColor = "#808015";
+        config5.textColor = "#555500";
+        config5.waveTextColor = "#FFFFAA";
+        config5.waveColor = "#AAAA39";
+        config5.textVertPosition = 0.8;
+        config5.waveAnimateTime = 1000;
+        config5.waveHeight = 0.05;
+        config5.waveAnimate = true;
+        config5.waveRise = false;
+        config5.waveHeightScaling = false;
+        config5.waveOffset = 0.25;
+        config5.textSize = 0.75;
+        config5.waveCount = 3;
+        var gauge6 = loadLiquidFillGauge("fillgauge6", 80);
+        function NewValue() {
+            if (Math.random() > .5) return Math.round(Math.random() * 100);
+            return (Math.random() * 100).toFixed(1);
+        }

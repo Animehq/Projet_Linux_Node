@@ -1,8 +1,14 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-family: Helvetica; 
+	font-weight:bold;
 }
 
-a {
-  color: #00B7FF;
+.gauge1, .gauge2, .gauge3, .gauge4, .gauge5, .gauge6 {
+	text-align: left; 
+	margin: 4.12em;
 }
+
+/*.liquidFillGaugeText { 
+	font-family: Helvetica; 
+	font-weight: bold; 
+}*/
