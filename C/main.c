@@ -293,13 +293,28 @@ int main(int argc, char *argv[])
         //printf("Bande passante envoyée : %s Bits\n", envoyer);
         fclose(dev);
 
-        sleep(5);
-        system("clear");
-        sprintf(tampon , "{\"utilisation du cpu \":\"%s\",\"utilisation de la ram\":\"%s\",\"Memoire actuellement utilisier\":\"%s\",\"Debit entrant\":\"%s\",\"Debit sortant\":\"%s\"}",cpufinal,memfinal,memusefinal,recut,envoyer);
         sleep(1);
+        system("clear");
+        sprintf(tampon , "{\"utilisation du cpu \":\"%s\",\"utilisation de la ram\":\"%s\",\"Memoire actuellement utiliser\":\"%s\",\"Debit entrant\":\"%s\",\"Debit sortant\":\"%s\"}",cpufinal,memfinal,memusefinal,recut,envoyer);
 
-        n = read(newsockfd,buffer,255 );
 
+        n = write(newsockfd,tampon,255);
+        printf("\n");
+        if (n < 0)
+        {
+            perror("ERROR writing to socket");
+            exit(1);
+        }
+        else
+        {
+            printf("Writing socket OK !");
+        }
+
+    }
+
+
+n = read(newsockfd,buffer,255 );
+        printf("\n");
         if (n < 0)
         {
             perror("ERROR reading from socket");
@@ -319,23 +334,6 @@ int main(int argc, char *argv[])
             BoucleInfinie = 1;
             exit(1);
         }
-
-
-
-        n = write(newsockfd,tampon,sizeof(tampon));
-
-        if (n < 0)
-        {
-            perror("ERROR writing to socket");
-            exit(1);
-        }
-        else
-        {
-            printf("Writing socket OK !");
-        }
-
-    }
-
 
     return 0;
 }

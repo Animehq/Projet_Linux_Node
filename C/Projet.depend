@@ -18,3 +18,14 @@
 	<netdb.h>
 	<math.h>
 
+1463096279 source:/home/invite/Bureau/Projet_Linux_Node-CStatis/C/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/socket.h>
+	<err.h>
+	<unistd.h>
+	<netinet/in.h>
+	<netdb.h>
+	<math.h>
+
